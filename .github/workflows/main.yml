@@ -1,0 +1,19 @@
+name: Mobile App React Native
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build and echo
+        run: |
+          npm install
+          npm run build
+          echo "Build successful!"
